@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EccoVoidHub - Contact Us</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #e8e8e8;
+    }
+
+    header {
+      background: #111;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    nav a {
+      color: #e8e8e8;
+      margin: 0 1em;
+      text-decoration: none;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #90ee90; }
+
+    /* active link glow */
+    nav a.active {
+      color: #90ee90;
+      text-shadow: 0 0 8px #90ee90;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3em 2em;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 { color: #90ee90; }
+
+    .member-card {
+      background: #1a1a1a;
+      padding: 1.5em;
+      margin: 1.2em 0;
+      border-radius: 10px;
+      border-left: 4px solid #6ee16e;
+      transition: 0.3s;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #2f8f2f55;
+    }
+
+    /* Button Style */
+    .btn {
+      background: green;
+      color: white;
+      padding: 0.5em 1em;
+      margin-top: 0.8em;
+      display: inline-block;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      margin-top: 3em;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div><strong>EccoVoidHub</strong></div>
+  <nav>
+    <a href="Home.html">HOME</a>
+    <a href="services.html">ECO TIPS</a>
+    <a href="Contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<section>
+  <h1>Contact Us G3</h1>
+  <p>If you have questions, you may contact any member of our team below.</p>
+
+  <div class="member-card">
+    <h2>Shaune Loquias</h2>
+    <a class="btn" href="https://www.facebook.com/sangee.loquias" target="_blank" rel="noopener">Facebook Profile</a>
+  </div>
+
+  <div class="member-card">
+    <h2>Gil Claveria</h2>
+    <a class="btn" href="https://www.facebook.com/gil.claveria.5" target="_blank" rel="noopener">Facebook Profile</a>
+  </div>
+
+  <div class="member-card">
+    <h2>Kyz Denise Aquino</h2>
+    <a class="btn" href="https://www.facebook.com/kyz.denise.9" target="_blank" rel="noopener">Facebook Profile</a>
+  </div>
+
+  <div class="member-card">
+    <h2>Jasper Luzon</h2>
+    <a class="btn" href="https://www.facebook.com/hasperluzon23" target="_blank" rel="noopener">Facebook Profile</a>
+  </div>
+
+  <div class="member-card">
+    <h2>James Billones</h2>
+    <a class="btn" href="https://www.facebook.com/james.billones.980" target="_blank" rel="noopener">Facebook Profile</a>
+  </div>
+
+  <div class="member-card">
+    <h2>Jan Carl Canon</h2>
+    <a class="btn" href="https://www.facebook.com/curlytopssss.19" target="_blank" rel="noopener">Facebook Profile</a>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 EccoVoidHub — Protecting Tomorrow
+</footer>
+
+<!-- Auto Active Nav Script -->
+<script>
+  (function() {
+    const navLinks = document.querySelectorAll('nav a');
+    const currentFile = window.location.pathname.split('/').pop() || "index.html";
+
+    navLinks.forEach(link => {
+      const linkFile = link.getAttribute('href').split('/').pop();
+      if (linkFile.toLowerCase() === currentFile.toLowerCase()) {
+        link.classList.add('active');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EccoVoidHub - Eco Tips</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #000;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #111;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #f0f0f0;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #90ee90; }
+
+    /* active page highlight */
+    nav a.active {
+      color: #90ee90;
+      font-weight: bold;
+      text-shadow: 0 0 8px #90ee90;
+    }
+
+    section { padding: 3em 2em; }
+
+    .service-card {
+      background: #1a1a1a;
+      padding: 2em;
+      margin: 1.5em 0;
+      border-radius: 10px;
+      border-left: 4px solid #6ee16e;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* initial state for reveal animation */
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .service-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #2f8f2f;
+    }
+
+    .service-card h2 {
+      color: #90ee90;
+      margin-bottom: 0.5em;
+    }
+
+    /* small button style (kept same look as Home) */
+    .btn {
+      background: green;
+      color: white;
+      padding: 0.45em 0.9em;
+      margin-top: 1em;
+      display: inline-block;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+    .btn:hover {
+      background: #2ecc71;
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      margin-top: 3em;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 520px) {
+      header { padding: 0.8em 1em; }
+      section { padding: 2em 1em; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>EccoVoidHub</strong></div>
+    <nav>
+      <a href="Home.html">HOME</a>
+      <a href="services.html" class="active">ECO TIPS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Eco Tips</h1>
+    <p>Simple ways you can protect the environment every day.</p>
+
+    <div class="service-card">
+      <h2>🌱 Live More Sustainably</h2>
+      <ul>
+        <li>Use reusable bags, bottles, & containers.</li>
+        <li>Turn off lights & unplug devices when not needed.</li>
+        <li>Take shorter showers (3–5 minutes).</li>
+        <li>Choose eco-friendly or refillable products.</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h2>♻️ Reduce Your Waste</h2>
+      <ul>
+        <li>Sort recyclables, biodegradables, and general waste.</li>
+        <li>Avoid single-use plastics like sachets and plastic cups.</li>
+        <li>Reuse jars, bottles, and containers.</li>
+        <li>Compost food scraps like peels and leftovers.</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h2>🌍 Learn About the Environment</h2>
+      <ul>
+        <li><strong>Climate Change:</strong> caused by pollution & greenhouse gases.</li>
+        <li><strong>Water Pollution:</strong> waste entering rivers & oceans.</li>
+        <li><strong>Deforestation:</strong> forests removed faster than they regrow.</li>
+        <li><strong>Plastic Pollution:</strong> plastics break into harmful microplastics.</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h2>📢 Community Action Ideas</h2>
+      <ul>
+        <li>Join or organize a cleanup.</li>
+        <li>Plant a tree or start a small garden.</li>
+        <li>Create posters or awareness messages.</li>
+        <li>Help your family sort trash correctly.</li>
+      </ul>
+      <!-- example CTA to encourage action (optional) -->
+      <a class="btn" href="#top">Back to top</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2025 EccoVoidHub — Protecting Tomorrow
+  </footer>
+
+  <script>
+    // reveal on scroll (script at end so DOM exists)
+    function reveal() {
+      const items = document.querySelectorAll('.service-card');
+      items.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+    // safety call after layout settles
+    setTimeout(reveal, 300);
+  </script>
+</body>
+</html>
